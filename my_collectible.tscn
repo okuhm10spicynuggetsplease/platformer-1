@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cj0yyieftye1o"]
+
+[ext_resource type="Script" uid="uid://be73c8wwa1xvc" path="res://collectible.gd" id="1_7yf3t"]
+[ext_resource type="Texture2D" uid="uid://5knxrahi6i53" path="res://coin_collectible-removebg-preview.png" id="1_we4xa"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7yf3t"]
+radius = 198.35916
+
+[node name="MyCollectible" type="Area2D" unique_id=74428016]
+script = ExtResource("1_7yf3t")
+metadata/_custom_type_script = "uid://be73c8wwa1xvc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=733600598]
+scale = Vector2(0.17725156, 0.16941084)
+shape = SubResource("CircleShape2D_7yf3t")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1568711514]
+scale = Vector2(0.17725156, 0.16941084)
+texture = ExtResource("1_we4xa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
